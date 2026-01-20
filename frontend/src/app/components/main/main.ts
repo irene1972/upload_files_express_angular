@@ -25,6 +25,7 @@ export class Main {
   cargarDatos() {
     if (!this.miForm.valid || !this.imagenFile) {
       this.miForm.markAllAsTouched();
+      this.mensaje='El archivo y algunos campos son requeridos';
       return;
     }
     //console.log(this.miForm.value);
