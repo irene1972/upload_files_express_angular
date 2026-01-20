@@ -1,0 +1,13 @@
+<div [class.text-danger]="tipo === false" [class.text-success]="tipo === true">{{mensaje}}</div>
+<form [formGroup]="miForm" (ngSubmit)="cargarDatos()">
+    <input type="text" placeholder="Ej. Node.js, PHP, CSS, Laravel, UX/UI" (keydown)="insertarTags($event)">
+    <div *ngFor="let tag of tags">
+        <li>
+            <button>{{tag}}</button>
+            <button (click)="eliminarTag($event)">x</button>
+        </li>
+    </div>
+    <input type="hidden" formControlName="tags">
+    <input type="file" placeholder="Escoger un archivo" formControlName="imagen" (change)="onFileSelected($event)">
+    <button type="submit">Enviar</button>
+</form>
